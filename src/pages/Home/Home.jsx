@@ -1,19 +1,36 @@
-import React from 'react';
-import logo from './img/logo.svg';
-import styles from './styles.module.scss';
+import React, { Component } from 'react';
+import { withAppContext } from 'providers/App';
+import API from 'services/API';
 
-const Home = () => (
-  <div className={styles.container}>
-    <header className={styles.header}>
-      <img src={logo} className={styles.logo} alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a className={styles.link} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React
-      </a>
-    </header>
-  </div>
-);
+class Home extends Component {
 
-export default Home;
+  componentDidMount() {
+    this.getCharacters();
+  }
+  
+   getCharacters = () => {
+    const { context: {setCharacters, setApiInfo} } = this.props;
+
+    API('api/character/')
+      .then((data) => {
+        setCharacters(data.results);
+        setApiInfo(data.info);
+      });
+  }
+
+  render() {
+    const { context: {characters} } = this.props;
+    return (
+      <div>
+        {characters.map((character) => {
+          return (
+            <p>{character.name}</p>
+          )
+        })}
+      </div>
+    );
+  }
+}
+
+
+export default withAppContext(Home);
