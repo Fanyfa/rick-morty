@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withAppContext } from 'providers/App';
+import Character from 'components/Character/';
 import API from 'services/API';
+
 
 class Home extends Component {
 
