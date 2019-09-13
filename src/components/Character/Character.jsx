@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { string, arrayOf } from 'prop-types';
+import { arrayOf, string } from 'prop-types';
 import { withAppContext } from 'providers/App';
+import React, { Component } from 'react';
+import styles from './styles.module.scss';
 
 class Character extends Component {
   static propTypes = {
@@ -20,20 +21,28 @@ class Character extends Component {
     episodes: undefined,
   };
 
-
   render() {
-    const { context: {characters} } = this.props;
+    const { name, image, status, species, gender } = this.props;
     return (
-      <div>
-        {characters.map((character) => {
-          return (
-            <p>{character.name}</p>
-          )
-        })}
+      <div className={styles.card}>
+        <div style={{ backgroundImage: `url('${image}')` }} alt={name} className={styles.image} />
+        <div className={styles.caption}>
+          <div className={styles.name}>{name}</div>
+          <div class={styles.species}>{species}</div>
+          <ul className={styles.details}>
+            <li>
+              <span className={styles.detailsItem}>STATUS:</span>
+              {status}
+            </li>
+            <li>
+              <span className={styles.detailsItem}>GENDER:</span>
+              {gender}
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
 }
-
 
 export default withAppContext(Character);
