@@ -42,9 +42,12 @@ class Home extends Component {
     const { name } = this.state;
     return (
       <div>
-        <Input onChange={this.handleOnchange} />
         <div className={styles.container}>
           <img src={RickAndMorty} alt="Morty" className={styles.image} />
+        </div>
+        <div className={styles.input}>
+          <span>Who are you looking for?</span>
+          <Input onChange={this.handleOnchange} className={styles.input} />
         </div>
         {characters
           .filter(item => (name === '' ? true : item.name.toLowerCase().includes(name.toLowerCase())))

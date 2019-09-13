@@ -1,11 +1,11 @@
-import { func, string } from 'prop-types';
+import { func } from 'prop-types';
 import React, { Component } from 'react';
 import styles from './styles.module.scss';
 
 class Input extends Component {
   static propTypes = {
     onChange: func.isRequired,
-    name: string.isRequired,
+    className: '',
   };
 
   handleOnChange = event => {
@@ -14,7 +14,8 @@ class Input extends Component {
   };
 
   render() {
-    return <input className={styles.input} onChange={this.handleOnChange} />;
+    const { className } = this.props;
+    return <input className={`${styles.input} ${className}`} onChange={this.handleOnChange} />;
   }
 }
 
