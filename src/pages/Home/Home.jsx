@@ -1,9 +1,13 @@
+import Button from 'components/Button/';
 import Character from 'components/Character/';
+import Header from 'components/Header/';
 import Input from 'components/Input/';
+import Select from 'components/Select/';
 import { withAppContext } from 'providers/App';
 import React, { Component } from 'react';
-import API from 'services/API';
-import RickAndMorty from './img/Rick_and_Morty.png';
+import { Link } from 'react-router-dom';
+import fetch from 'services/fetch';
+import Rick from './img/rick_error.jpeg';
 import styles from './styles.module.scss';
 
 class Home extends Component {
@@ -11,6 +15,8 @@ class Home extends Component {
     super(props);
     this.state = {
       name: '',
+      status: '',
+      error: false,
     };
   }
 
@@ -22,46 +28,86 @@ class Home extends Component {
     const {
       context: { setCharacters, setApiInfo },
     } = this.props;
+    const { name, status } = this.state;
 
-    API('api/character/').then(data => {
-      setCharacters(data.results);
+    fetch(`https://rickandmortyapi.com/api/character/?name=${name}&status=${status}`).then(data => {
+      if (data.error) {
+        this.setState({
+          error: true,
+        });
+      } else {
+        setCharacters(data.results);
+        setApiInfo(data.info);
+        this.setState({
+          error: false,
+        });
+      }
+    });
+  };
+
+  getMoreCharacters = () => {
+    const {
+      context: { apiInfo, characters, setCharacters, setApiInfo },
+    } = this.props;
+    fetch(apiInfo.next).then(data => {
+      setCharacters([...characters, ...data.results]);
       setApiInfo(data.info);
     });
   };
 
-  handleOnchange = name => {
-    this.setState({
-      name,
+  handleInputOnchange = name => {
+    this.setState({ name }, () => {
+      this.getCharacters();
+    });
+  };
+
+  handleSelectOnchange = status => {
+    this.setState({ status }, () => {
+      this.getCharacters();
     });
   };
 
   render() {
     const {
-      context: { characters },
+      context: { characters, categories, apiInfo },
     } = this.props;
-    const { name } = this.state;
+    const { error } = this.state;
     return (
-      <div>
-        <div className={styles.container}>
-          <img src={RickAndMorty} alt="Morty" className={styles.image} />
+      <div className={styles.home}>
+        <Header />
+        <div className={styles.filters}>
+          <div className={styles.options}>
+            <span className={styles.text}>Who are you looking for?</span>
+            <Input onChange={this.handleInputOnchange} className={styles.input} />
+          </div>
+          <div className={styles.options}>
+            <span className={styles.text}>Is dead or alive?</span>
+            <Select className={styles.select} categories={categories} onChange={this.handleSelectOnchange} />
+          </div>
         </div>
-        <div className={styles.input}>
-          <span>Who are you looking for?</span>
-          <Input onChange={this.handleOnchange} className={styles.input} />
+        <div className={styles.characters}>
+          {!error ? (
+            characters.map((character, index) => {
+              return (
+                <Link key={index} to={`/CharacterDetails/${character.id}`}>
+                  <Character
+                    name={character.name}
+                    species={character.species}
+                    gender={character.gender}
+                    image={character.image}
+                    status={character.status}
+                  />
+                </Link>
+              );
+            })
+          ) : (
+            <div>
+              <div className={styles.errorText}>No results found!</div>
+              <img src={Rick} alt="Rick" className={styles.image} />
+            </div>
+          )}
         </div>
-        {characters
-          .filter(item => (name === '' ? true : item.name.toLowerCase().includes(name.toLowerCase())))
-          .map(character => {
-            return (
-              <Character
-                name={character.name}
-                species={character.species}
-                gender={character.gender}
-                image={character.image}
-                status={character.status}
-              />
-            );
-          })}
+        {apiInfo.next !== '' && !error ? <Button text="More" onClick={this.getMoreCharacters} /> : null}
       </div>
     );
   }

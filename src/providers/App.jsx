@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 const AppContext = React.createContext();
 
@@ -8,26 +8,27 @@ class AppProvider extends Component {
     this.state = {
       characters: [],
       apiInfo: {},
+      categories: ['Alive', 'unknown', 'Dead'],
       setCharacters: this.setCharacters,
       setApiInfo: this.setApiInfo,
     };
-  };
+  }
 
-  setCharacters= (characters) => {
+  setCharacters = characters => {
     this.setState({
       characters,
     });
   };
 
-  setApiInfo= (apiInfo) => {
+  setApiInfo = apiInfo => {
     this.setState({
       apiInfo,
     });
   };
 
   render() {
-    const { children } = this.props; 
-    return <AppContext.Provider value={this.state}>{children}</AppContext.Provider>
+    const { children } = this.props;
+    return <AppContext.Provider value={this.state}>{children}</AppContext.Provider>;
   }
 }
 

@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+
+  .image {
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 539px;
+  }
+}

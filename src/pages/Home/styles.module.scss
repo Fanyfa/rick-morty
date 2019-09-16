@@ -1,14 +1,40 @@
-.container {
-  text-align: center;
-
-  .image {
-    background-position: top center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.home {
+  .container {
+    text-align: center;
   }
-}
+  .filters {
+    margin-bottom: 10px;
 
-.input {
-  text-align: center;
-  margin-left: 5px;
+    .options {
+      text-align: center;
+      margin-bottom: 5px;
+
+      .text {
+        color: #01afc7;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .characters {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    a {
+      color: inherit;
+    }
+
+    .image {
+      width: 500px;
+      margin-top: 20px;
+    }
+
+    .errorText {
+      font-size: 30px;
+      font-weight: bold;
+      color: red;
+    }
+  }
 }
