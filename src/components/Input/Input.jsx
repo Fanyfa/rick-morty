@@ -1,11 +1,11 @@
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 import React, { Component } from 'react';
 import styles from './styles.module.scss';
 
 class Input extends Component {
   static propTypes = {
     onChange: func.isRequired,
-    className: '',
+    className: string,
   };
 
   handleOnChange = event => {
