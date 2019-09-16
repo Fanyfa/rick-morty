@@ -1,15 +1,18 @@
+import CharacterDetails from 'pages/CharacterDetails';
+import Home from 'pages/Home';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from 'pages/Home';
 
 class App extends Component {
   render() {
     return (
       <Router>
+        <Route exact path="/" render={() => <Home />} />
         <Route
-          exact path='/'
-          render={() => <Home />}
-          />
+          exact
+          path="/CharacterDetails/:id"
+          render={props => <CharacterDetails match={props.match} />}
+        />
       </Router>
     );
   }
