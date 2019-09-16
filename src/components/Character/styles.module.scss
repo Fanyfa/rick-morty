@@ -4,11 +4,12 @@
   padding: 1em;
   border-radius: 15px;
   margin: 10px;
-  background: linear-gradient(20deg, #191919 0%, #100b32 33%, #5c0249 100%);
+  background: linear-gradient(20deg, #aedfb2 0%, #aedfb2 33%, #01afc7 100%);
   text-align: left;
   box-shadow: 0px 5px 20px -10px #111111;
   position: relative;
   transition: 0.4s;
+  text-decoration: none;
 
   &:hover {
     transform: translateY(-10px) rotate(-3deg);
@@ -47,15 +48,16 @@
       padding: 0.25em;
       line-height: 1;
       border-radius: 2px;
-      background: #5c0249;
+      background: #01afc7;
     }
 
     .details {
       margin: 10px;
 
       .detailsItem {
-        margin-right: 10px;
+        margin-right: 5px;
         font-weight: bold;
+        text-transform: uppercase;
       }
     }
   }
