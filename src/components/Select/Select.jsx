@@ -10,8 +10,9 @@ class Select extends Component {
   };
 
   handleOnChange = event => {
+    const { onChange } = this.props;
     const value = event.currentTarget.value;
-    this.props.onChange(value);
+    onChange(value);
   };
 
   render() {

@@ -1,3 +1,5 @@
+@import '~styles/colors';
+
 .card {
   display: inline-block;
   width: 300px;
@@ -24,7 +26,7 @@
   }
 
   .caption {
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba($color1, 0.65);
     padding: 1em;
     position: relative;
     border-radius: 0 0 3px 3px;
@@ -41,14 +43,13 @@
       right: 1em;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
-      color: #ffffff;
+      color: $color1;
       text-transform: uppercase;
-      font-family: 'Open Sans Condensed', 'Open Sans', helvetica, sans-serif;
       letter-spacing: 0.1em;
       padding: 0.25em;
       line-height: 1;
       border-radius: 2px;
-      background: #01afc7;
+      background: $color3;
     }
 
     .details {

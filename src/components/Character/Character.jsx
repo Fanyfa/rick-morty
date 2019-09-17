@@ -1,5 +1,4 @@
 import { string } from 'prop-types';
-import { withAppContext } from 'providers/App';
 import React, { Component } from 'react';
 import styles from './styles.module.scss';
 
@@ -45,33 +44,25 @@ class Character extends Component {
                 <span className={styles.detailsItem}>Origin:</span>
                 {origin}
               </li>
-            ) : (
-              ''
-            )}
+            ) : null}
             {type ? (
               <li>
                 <span className={styles.detailsItem}>Type:</span>
                 {type}
               </li>
-            ) : (
-              ''
-            )}
+            ) : null}
             {location ? (
               <li>
                 <span className={styles.detailsItem}>Location:</span>
                 {location}
               </li>
-            ) : (
-              ''
-            )}
+            ) : null}
             {episodes ? (
               <li>
                 <span className={styles.detailsItem}>Appears in episodes:</span>
                 {episodes}
               </li>
-            ) : (
-              ''
-            )}
+            ) : null}
           </ul>
         </div>
       </div>
@@ -79,4 +70,4 @@ class Character extends Component {
   }
 }
 
-export default withAppContext(Character);
+export default Character;

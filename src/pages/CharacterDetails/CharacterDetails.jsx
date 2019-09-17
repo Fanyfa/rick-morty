@@ -1,6 +1,5 @@
 import Character from 'components/Character/';
 import Header from 'components/Header/';
-import { arrayOf, string } from 'prop-types';
 import React, { Component } from 'react';
 import fetch from 'services/fetch';
 import styles from './styles.module.scss';
@@ -10,7 +9,7 @@ class CharacterDetails extends Component {
     super(props);
     this.state = {
       character: undefined,
-      episodes: arrayOf(string),
+      episodes: [],
     };
   }
 
