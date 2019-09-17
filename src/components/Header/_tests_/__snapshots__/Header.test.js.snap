@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> renders 1`] = `
+<div
+  className="container"
+>
+  <img
+    alt="Morty"
+    className="image"
+    src="Rick_and_Morty.png"
+  />
+</div>
+`;
