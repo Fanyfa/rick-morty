@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input> renders 1`] = `
+<input
+  className="input undefined"
+  onChange={[Function]}
+/>
+`;
+
+exports[`<Input> when {classname} 1`] = `
+<input
+  className="input Lorem Inpsum"
+  onChange={[Function]}
+/>
+`;

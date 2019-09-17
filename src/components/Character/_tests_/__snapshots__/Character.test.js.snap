@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Character> renders 1`] = `
+<div
+  className="card"
+>
+  <div
+    alt="Beth"
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url('https://rickandmortyapi.com/api/character/avatar/3.jpeg')",
+      }
+    }
+  />
+  <div
+    className="caption"
+  >
+    <div
+      className="name"
+    >
+      Beth
+    </div>
+    <div
+      className="species"
+    >
+      Human
+    </div>
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Status:
+        </span>
+        Alive
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Gender:
+        </span>
+        Female
+      </li>
+      
+      
+      
+      
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Character> when {episodes} 1`] = `
+<div
+  className="card"
+>
+  <div
+    alt="Beth"
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url('https://rickandmortyapi.com/api/character/avatar/3.jpeg')",
+      }
+    }
+  />
+  <div
+    className="caption"
+  >
+    <div
+      className="name"
+    >
+      Beth
+    </div>
+    <div
+      className="species"
+    >
+      Human
+    </div>
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Status:
+        </span>
+        Alive
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Gender:
+        </span>
+        Female
+      </li>
+      
+      
+      
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Appears in episodes:
+        </span>
+        1, 2, 3
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Character> when {location} 1`] = `
+<div
+  className="card"
+>
+  <div
+    alt="Beth"
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url('https://rickandmortyapi.com/api/character/avatar/3.jpeg')",
+      }
+    }
+  />
+  <div
+    className="caption"
+  >
+    <div
+      className="name"
+    >
+      Beth
+    </div>
+    <div
+      className="species"
+    >
+      Human
+    </div>
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Status:
+        </span>
+        Alive
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Gender:
+        </span>
+        Female
+      </li>
+      
+      
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Location:
+        </span>
+        Earth
+      </li>
+      
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Character> when {origin} 1`] = `
+<div
+  className="card"
+>
+  <div
+    alt="Beth"
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url('https://rickandmortyapi.com/api/character/avatar/3.jpeg')",
+      }
+    }
+  />
+  <div
+    className="caption"
+  >
+    <div
+      className="name"
+    >
+      Beth
+    </div>
+    <div
+      className="species"
+    >
+      Human
+    </div>
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Status:
+        </span>
+        Alive
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Gender:
+        </span>
+        Female
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Origin:
+        </span>
+        Earth
+      </li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<Character> when {type} 1`] = `
+<div
+  className="card"
+>
+  <div
+    alt="Beth"
+    className="image"
+    style={
+      Object {
+        "backgroundImage": "url('https://rickandmortyapi.com/api/character/avatar/3.jpeg')",
+      }
+    }
+  />
+  <div
+    className="caption"
+  >
+    <div
+      className="name"
+    >
+      Beth
+    </div>
+    <div
+      className="species"
+    >
+      Human
+    </div>
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Status:
+        </span>
+        Alive
+      </li>
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Gender:
+        </span>
+        Female
+      </li>
+      
+      <li>
+        <span
+          className="detailsItem"
+        >
+          Type:
+        </span>
+        Human
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+`;

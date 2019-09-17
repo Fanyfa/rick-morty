@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 class Select extends Component {
   static propTypes = {
     className: string,
-    categories: array,
+    categories: array.isRequired,
     onChange: func.isRequired,
   };
 
@@ -16,6 +16,7 @@ class Select extends Component {
 
   render() {
     const { className, categories } = this.props;
+
     return (
       <select className={`${styles.select} ${className}`} onChange={this.handleOnChange}>
         <option value="">All</option>
